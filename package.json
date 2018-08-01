@@ -1,7 +1,7 @@
 {
   "name": "bind-gallery",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Photo Gallery Web Component",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ac1dev@bitbucket.org/ac1dev/gallery-stenciljs-component.git"
+    "url": "git+https://github.com/bind-doo/bind-photo-gallery.git"
   },
   "author": "Bind D.o.o.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/binddoo/stenciljs"
+    "url": "https://github.com/binddoo/photo-gallery/issues"
   },
   "homepage": "https://www.bind.ba",
   "jest": {
