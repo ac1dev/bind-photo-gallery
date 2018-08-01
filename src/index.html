@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stencil Component Starter</title>
+  <script src="/build/bind-gallery.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-y: hidden !important;
+      background-color: rgba(16, 21, 33, 0.95) !important;
+    }
+
+    * {
+      box-sizing: border-box !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <bind-gallery has-preview-toolbar="true"></bind-gallery>
+
+  <script>
+    const imgArray = [
+      {
+        title: 'image 1',
+        url: 'https://i.ytimg.com/vi/RHLknisJ-Sg/maxresdefault.jpg',
+        thumbnailUrl: 'https://i.ytimg.com/vi/RHLknisJ-Sg/maxresdefault.jpg'
+      },
+      {
+        title: 'image 2',
+        url: 'https://www.tafjord.no/media/1018/sample1_l.jpg',
+        thumbnailUrl: 'https://www.tafjord.no/media/1018/sample1_l.jpg',
+        description: 'samplee'
+      },
+      {
+        url: 'https://www.fifa.com/assets/img/tournaments/17/2018/promo/destination--red.png',
+        thumbnailUrl: 'https://www.fifa.com/assets/img/tournaments/17/2018/promo/destination--red.png',
+        description: 'Fifa 18 World Cup'
+      },
+      {
+        title: 'image 4',
+        url: 'http://stmedia.startribune.com/images/ows_151916989963809.jpg',
+        thumbnailUrl: 'http://stmedia.startribune.com/images/ows_151916989963809.jpg'
+      },
+      {
+        url: 'https://www.tesla.com/sites/default/files/images/model-x/section-hero-background.jpg?20180607',
+        thumbnailUrl: 'https://www.tesla.com/sites/default/files/images/model-x/section-hero-background.jpg?20180607'
+      },
+      {
+        title: 'image 6',
+        url: 'https://www.tesla.com/tesla_theme/assets/img/models/v1.0/section-hero-background.jpg?20180111',
+        thumbnailUrl: 'https://www.tesla.com/tesla_theme/assets/img/models/v1.0/section-hero-background.jpg?20180111',
+        description: 'tesla'
+      },
+      {
+        title: 'avengers',
+        url: 'https://www.hdwallpapers.in/download/avengers_infinity_war_4k_8k-wide.jpg',
+        thumbnailUrl: 'https://www.hdwallpapers.in/download/avengers_infinity_war_4k_8k-wide.jpg',
+        description: 'amazing avengers'
+      },
+      {
+        title: 'gauntlet',
+        url: 'https://images.wallpapersden.com/image/download/infinity-gauntlet-of-thanos-avengers-infinity-war-2018_61187_3840x2160.jpg',
+        thumbnailUrl: 'https://images.wallpapersden.com/image/download/infinity-gauntlet-of-thanos-avengers-infinity-war-2018_61187_3840x2160.jpg',
+        description: 'thanos gauntlet'
+      }
+    ];
+
+    const component = document.querySelector('bind-gallery');
+    component.images = imgArray;
+
+    (function () {
+      const component = document.querySelector('bind-gallery');
+
+      component.addEventListener("onGalleryClose", event => {
+        console.log(event.detail, 'hello event');
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{
+  "name": "bind-gallery",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "jest",
+    "test.watch": "jest --watch"
+  },
+  "dependencies": {
+    "@stencil/core": "^0.10.0",
+    "@stencil/router": "^0.2.2",
+    "pinchit": "^0.6.2"
+  },
+  "devDependencies": {
+    "@stencil/sass": "0.0.5",
+    "@types/jest": "^21.1.1",
+    "jest": "^21.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ac1dev@bitbucket.org/ac1dev/gallery-stenciljs-component.git"
+  },
+  "author": "Bind D.o.o.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binddoo/stenciljs"
+  },
+  "homepage": "https://www.bind.ba",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}
