@@ -4,9 +4,9 @@
 
 This is a photo gallery web component. Visit [documentation](https://github.com/bind-doo/bind-photo-gallery/wiki) page for more information about installation, usage and contributing. 
 
-- [Installation]('https://github.com/bind-doo/bind-photo-gallery/wiki/Installation')
-- [Usage]('https://github.com/bind-doo/bind-photo-gallery/wiki/Usage')
-- [Contributing]('https://github.com/bind-doo/bind-photo-gallery/wiki/Contributing')
+- [Installation](https://github.com/bind-doo/bind-photo-gallery/wiki/Installation)
+- [Usage](https://github.com/bind-doo/bind-photo-gallery/wiki/Usage)
+- [Contributing](https://github.com/bind-doo/bind-photo-gallery/wiki/Contributing)
 
 **Issues, questions or feature requests**
 
