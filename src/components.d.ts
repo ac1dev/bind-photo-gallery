@@ -33,6 +33,7 @@ declare global {
 
   namespace StencilComponents {
     interface BindGallery {
+      'closeButton': boolean;
       'imageLoaded': () => void;
       'images': Array<image>;
       'nextImage': () => void;
@@ -61,6 +62,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BindGalleryAttributes extends HTMLAttributes {
+      'closeButton'?: boolean;
       'images'?: Array<image>;
       'onOnGalleryClose'?: (event: CustomEvent) => void;
       'onOnImageChange'?: (event: CustomEvent<number>) => void;

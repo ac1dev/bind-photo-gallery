@@ -31,6 +31,7 @@ export class Gallery {
   };
 
   @Prop() public images: Array<image> = [];
+  @Prop() public closeButton: boolean = false;
 
   @Event() onGalleryClose: EventEmitter;
   @Event() onImageChange: EventEmitter<number>;
@@ -204,6 +205,25 @@ export class Gallery {
     ;
   }
 
+  private _renderCloseButton(): any {
+    if (this.closeButton) {
+      return <div class='text-right bc-top-right'>
+        <button class='bc-close-button' onClick={() => this._closeGallery()}></button>
+      </div>
+    } else {
+      return <div></div>
+    }
+  }
+
+  private _renderGridButton(): any {
+      return <div>
+        <button class='bc-grid-button' onClick={() => this.openGridGallery()}></button>
+      </div>
+    } else {
+      return <div></div>
+    }
+  }
+
   render() {
 
     return (
@@ -213,14 +233,9 @@ export class Gallery {
         <div class='bc-gallery-wrapper'>
           <div class='bc-top-toolbar'>
             <div class='bc-top-left'>
-              <div>
-                <button class='bc-grid-button' onClick={() => this.openGridGallery()}></button>
-              </div>
+              {this._renderGridButton()}
               <div class='bc-image-number'>{this.imageIndex + 1} / {this.images.length}</div>
-            </div>
-
-            <div class='text-right bc-top-right'>
-              <button class='bc-close-button' onClick={() => this._closeGallery()}></button>
+              {this._renderCloseButton()}
             </div>
           </div>
 
