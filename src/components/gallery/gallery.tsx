@@ -216,6 +216,7 @@ export class Gallery {
   }
 
   private _renderGridButton(): any {
+    if (this.images.length > 1) {
       return <div>
         <button class='bc-grid-button' onClick={() => this.openGridGallery()}></button>
       </div>

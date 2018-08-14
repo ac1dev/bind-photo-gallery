@@ -162,8 +162,41 @@ let Gallery = class Gallery {
         }
     }
     _renderGridButton() {
-        return h("div", null,
-            h("button", { class: 'bc-grid-button', onClick: () => this.openGridGallery() }));
+        if (this.images.length > 1) {
+            return h("div", null,
+                h("button", { class: 'bc-grid-button', onClick: () => this.openGridGallery() }));
+        }
+        else {
+            return h("div", null);
+        }
+    }
+    render() {
+        return (h("div", null,
+            this._renderToolbarGrid(),
+            h("div", { class: 'bc-gallery-wrapper' },
+                h("div", { class: 'bc-top-toolbar' },
+                    h("div", { class: 'bc-top-left' },
+                        this._renderGridButton(),
+                        h("div", { class: 'bc-image-number' },
+                            this.imageIndex + 1,
+                            " / ",
+                            this.images.length),
+                        this._renderCloseButton())),
+                h("div", { class: 'bc-image-preview', style: this.images.length <= 1 ? this.imagePreviewHideNav : '' },
+                    h("div", { class: 'bc-navigation', style: this.images.length <= 1 ? this.hideNavStyle : '', onClick: () => this.previousImage() },
+                        h("button", { class: 'bc-navigation-left-button' })),
+                    h("div", null,
+                        this._displayLoadingSpinner(),
+                        h("div", { class: 'bc-image-wrapper', style: this.imageWrapperStyle, ref: element => this.galleryImageContainer = element },
+                            h("img", { id: 'bc-gallery-image', class: 'bc-gallery-image', style: this.galleryImageStyle, ref: element => this.galleryImageElement = element, src: this.galleryImage && this.galleryImage.url ? this.galleryImage.url : null, onLoad: () => this.imageLoaded(), alt: "image" }),
+                            h("p", { class: 'text-center bc-image-title' },
+                                this.galleryImage && this.galleryImage.title ? h("span", null, this.galleryImage.title) : null,
+                                this.galleryImage && this.galleryImage.description && this.galleryImage.title ? ' - ' : '',
+                                this.galleryImage && this.galleryImage.description ? h("span", null,
+                                    " ",
+                                    this.galleryImage.description) : null))),
+                    h("div", { class: 'bc-navigation', style: this.images.length <= 1 ? this.hideNavStyle : '', onClick: () => this.nextImage() },
+                        h("button", { class: 'bc-navigation-right-button' }))))));
     }
 };
 __decorate([
@@ -225,35 +258,3 @@ Gallery = __decorate([
     })
 ], Gallery);
 export { Gallery };
-{
-    return h("div", null);
-}
-render();
-{
-    return (h("div", null,
-        this._renderToolbarGrid(),
-        h("div", { class: 'bc-gallery-wrapper' },
-            h("div", { class: 'bc-top-toolbar' },
-                h("div", { class: 'bc-top-left' },
-                    this._renderGridButton(),
-                    h("div", { class: 'bc-image-number' },
-                        this.imageIndex + 1,
-                        " / ",
-                        this.images.length),
-                    this._renderCloseButton())),
-            h("div", { class: 'bc-image-preview', style: this.images.length <= 1 ? this.imagePreviewHideNav : '' },
-                h("div", { class: 'bc-navigation', style: this.images.length <= 1 ? this.hideNavStyle : '', onClick: () => this.previousImage() },
-                    h("button", { class: 'bc-navigation-left-button' })),
-                h("div", null,
-                    this._displayLoadingSpinner(),
-                    h("div", { class: 'bc-image-wrapper', style: this.imageWrapperStyle, ref: element => this.galleryImageContainer = element },
-                        h("img", { id: 'bc-gallery-image', class: 'bc-gallery-image', style: this.galleryImageStyle, ref: element => this.galleryImageElement = element, src: this.galleryImage && this.galleryImage.url ? this.galleryImage.url : null, onLoad: () => this.imageLoaded(), alt: "image" }),
-                        h("p", { class: 'text-center bc-image-title' },
-                            this.galleryImage && this.galleryImage.title ? h("span", null, this.galleryImage.title) : null,
-                            this.galleryImage && this.galleryImage.description && this.galleryImage.title ? ' - ' : '',
-                            this.galleryImage && this.galleryImage.description ? h("span", null,
-                                " ",
-                                this.galleryImage.description) : null))),
-                h("div", { class: 'bc-navigation', style: this.images.length <= 1 ? this.hideNavStyle : '', onClick: () => this.nextImage() },
-                    h("button", { class: 'bc-navigation-right-button' }))))));
-}
