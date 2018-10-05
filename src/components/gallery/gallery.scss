@@ -128,6 +128,7 @@
   display: block;
   width: auto;
   max-width: 100%;
+  max-height: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -285,9 +286,4 @@
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
-}
-
-p {
-  text-align: center;
-  color: white;
 }

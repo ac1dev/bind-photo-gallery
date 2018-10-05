@@ -216,9 +216,19 @@ export class Gallery {
   }
 
   private _renderGridButton(): any {
-    if (this.images.length > 1) {
+    if (this.images.length >= 2) {
       return <div>
         <button class='bc-grid-button' onClick={() => this.openGridGallery()}></button>
+      </div>
+    } else {
+      return <div></div>
+    }
+  }
+
+  private _renderImagesNumber(): any {
+    if (this.images.length >= 2) {
+      return <div>
+        <div class='bc-image-number'>{this.imageIndex + 1} / {this.images.length}</div>
       </div>
     } else {
       return <div></div>
@@ -235,7 +245,7 @@ export class Gallery {
           <div class='bc-top-toolbar'>
             <div class='bc-top-left'>
               {this._renderGridButton()}
-              <div class='bc-image-number'>{this.imageIndex + 1} / {this.images.length}</div>
+              {this._renderImagesNumber()}
               {this._renderCloseButton()}
             </div>
           </div>
@@ -255,11 +265,11 @@ export class Gallery {
                   onLoad={() => this.imageLoaded()}
                   alt="image" />
 
-                  <p class='text-center bc-image-title'>
-                    {this.galleryImage && this.galleryImage.title ? <span>{this.galleryImage.title}</span> : null}
-                    {this.galleryImage && this.galleryImage.description && this.galleryImage.title ? ' - ' : ''}
-                    {this.galleryImage && this.galleryImage.description ? <span> {this.galleryImage.description}</span> : null}
-                  </p>
+                <p class='text-center bc-image-title'>
+                  {this.galleryImage && this.galleryImage.title ? <span>{this.galleryImage.title}</span> : null}
+                  {this.galleryImage && this.galleryImage.description && this.galleryImage.title ? ' - ' : ''}
+                  {this.galleryImage && this.galleryImage.description ? <span> {this.galleryImage.description}</span> : null}
+                </p>
               </div>
             </div>
 
